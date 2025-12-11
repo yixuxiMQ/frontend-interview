@@ -33,7 +33,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { parseMarkdown, parseFrontmatter } from '@/utils/markdown'
+import { parseFrontmatter } from '@/utils/markdown'
 import { marked } from 'marked'
 
 const route = useRoute()
@@ -48,7 +48,11 @@ const blocks = ref<any[]>([])
 const errorMsg = ref('')
 
 // 加载 markdown 文件
-const modules = import.meta.glob('/src/content/questions/**/*.md', { eager: true, as: 'raw' })
+const modules = import.meta.glob('/src/content/questions/**/*.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+})
 
 onMounted(() => {
   try {
@@ -74,7 +78,7 @@ onMounted(() => {
       frontmatter.title ||
       (() => {
         const m = content.match(/^#\s+(.*)/m)
-        return m ? m[1].trim() : slug
+        return m && m[1] ? m[1].trim() : slug
       })()
 
     // 将内容按块拆分为文字块与代码块，分别渲染以改善观感

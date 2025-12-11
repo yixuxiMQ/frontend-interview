@@ -39,7 +39,11 @@ const route = useRoute()
 const id = String(route.params.id || '')
 
 // 从 src/content/questions 中以原始文本方式导入所有 markdown 文件
-const modules = import.meta.glob('/src/content/questions/**/*.md', { eager: true, as: 'raw' })
+const modules = import.meta.glob('/src/content/questions/**/*.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+})
 
 const questions = Object.entries(modules)
   .filter(([path]) => path.includes(`/questions/${id}/`))

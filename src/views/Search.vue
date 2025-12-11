@@ -35,7 +35,11 @@ const ready = ref(false)
 const results = ref<any[]>([])
 
 onMounted(async () => {
-  const modules = import.meta.glob('/src/content/questions/**/*.md', { eager: true, as: 'raw' })
+  const modules = import.meta.glob('/src/content/questions/**/*.md', {
+    eager: true,
+    query: '?raw',
+    import: 'default',
+  })
   const docs = Object.entries(modules).map(([path, raw]) => {
     const filename = path.split('/').pop() || ''
     const slug = filename.replace(/\.md$/, '')

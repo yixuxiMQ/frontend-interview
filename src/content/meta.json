@@ -1,0 +1,57 @@
+{
+  "categories": [
+    {
+      "id": "html-css",
+      "name": "HTML & CSS",
+      "description": "HTML语义化、CSS布局、响应式设计等",
+      "icon": "💻",
+      "count": 25,
+      "order": 1
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "description": "核心概念、ES6+、异步编程、设计模式",
+      "icon": "⚡",
+      "count": 50,
+      "order": 2
+    },
+    {
+      "id": "vue",
+      "name": "Vue.js",
+      "description": "Vue 2/3、组件化、状态管理、性能优化",
+      "icon": "🟢",
+      "count": 30,
+      "order": 3
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "description": "Hooks、状态管理、性能优化、源码解析",
+      "icon": "⚛️",
+      "count": 30,
+      "order": 4
+    },
+    {
+      "id": "browser",
+      "name": "浏览器原理",
+      "description": "渲染机制、事件循环、存储、安全",
+      "icon": "🌐",
+      "count": 20,
+      "order": 5
+    },
+    {
+      "id": "network",
+      "name": "网络相关",
+      "description": "HTTP、HTTPS、WebSocket、性能优化",
+      "icon": "📡",
+      "count": 15,
+      "order": 6
+    }
+  ],
+  "difficulties": [
+    { "id": "easy", "name": "初级", "color": "success" },
+    { "id": "medium", "name": "中级", "color": "warning" },
+    { "id": "hard", "name": "高级", "color": "error" }
+  ]
+}

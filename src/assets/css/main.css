@@ -1,0 +1,50 @@
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .prose-container {
+    /* typography 插件提供的 "prose" 是一种组件类，不能用 @apply 应用。
+       应在模板中直接使用类，例如：
+       <div class="prose prose-slate dark:prose-invert">...
+       如果需要在 CSS 中保留最小的回退，请只写布局相关规则。 */
+    max-width: none; /* 等同于 tailwind 的 max-w-none */
+  }
+
+  .code-block {
+    @apply rounded-lg overflow-hidden;
+  }
+
+  .question-card {
+    /* @apply card bg-base-100 shadow-md hover:shadow-lg transition-shadow; */
+  }
+
+  /* 回退样式：如果 DaisyUI 的 menu 样式未生效，确保在 md+ 强制横向显示 */
+  .header-menu {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .header-menu {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .header-menu > li {
+      list-style: none;
+      margin: 0;
+    }
+  }
+}

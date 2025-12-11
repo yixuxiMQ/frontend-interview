@@ -8,7 +8,7 @@ import typography from '@tailwindcss/typography'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/frontend-interview/' : '/',
+  base: '/frontend-interview/',
   plugins: [vue(), vueDevTools(), tailwindcss()],
   resolve: {
     alias: {

@@ -153,7 +153,7 @@ counter() // 1
 counter() // 2
 counter() // 3
 \`\`\`
-`,i=`---
+`,c=`---
 id: 'js-002'
 title: '解释 JavaScript 的事件循环 (Event Loop)'
 category: 'javascript'
@@ -184,7 +184,7 @@ console.log('script end')
 输出顺序：
 
 script start -> script end -> promise -> setTimeout
-`,c=`---
+`,i=`---
 id: 'js-003'
 title: 'Promise 的用法与原理'
 category: 'javascript'
@@ -341,31 +341,6 @@ const count = ref(0)
 const state = reactive({ a: 1 })
 \`\`\`
 `,_=`---
-id: 'vue-002'
-title: 'Vue 组件生命周期（Composition API）'
-category: 'vue'
-tags: ['lifecycle', 'composition']
-difficulty: 'easy'
----
-
-## ❓ 问题描述
-
-说明 Vue 3 中常见的生命周期钩子及其使用场景。
-
-## 💡 参考答案
-
-示例：
-
-\`\`\`javascript
-import { onMounted, onUnmounted } from 'vue'
-onMounted(() => {
-  console.log('mounted')
-})
-onUnmounted(() => {
-  console.log('unmounted')
-})
-\`\`\`
-`,g=`---
 id: 'vue-002'
 title: 'Vue 组件生命周期（Composition API）'
 category: 'vue'
@@ -712,32 +687,7 @@ Vue组件的生命周期是指：组件实例 **创建、初始化、渲染、�
    })
    \`\`\`
 
-   `,h=`---
-id: 'vue-003'
-title: 'Composition API 实战示例'
-category: 'vue'
-tags: ['composition', 'setup']
-difficulty: 'medium'
----
-
-## ❓ 问题描述
-
-演示如何用 Composition API 抽离业务逻辑为可复用函数。
-
-## 💡 参考答案
-
-示例：
-
-\`\`\`javascript
-// useCounter.js
-import { ref } from 'vue'
-export function useCounter() {
-  const count = ref(0)
-  const inc = () => count.value++
-  return { count, inc }
-}
-\`\`\`
-`,y=`---
+   `,g=`---
 id: 'vue-003'
 title: '对比Vue2和Vue3的生命周期中，选项式中的beforeCreate、created与组合式中的setup有什么区别？'
 category: 'vue'
@@ -1019,7 +969,7 @@ fetchCustomers()
 
 
    
-`,V=`---
+`,h=`---
 id: 'vue-004'
 title: '在Vue2和Vue3中，inject和props是否是响应式的'
 category: 'vue'
@@ -1099,7 +1049,7 @@ difficulty: 'medium'
 5. ### 总结建议
 
    - **Props**：放心使用，它是天然响应式的。
-   - **Inject**：如果你需要它响应，请在父组件 \`provide\` 时传入一个 **\`reactive\` 对象**或 **\`ref\`**。`,b=`\`\`\`javascript
+   - **Inject**：如果你需要它响应，请在父组件 \`provide\` 时传入一个 **\`reactive\` 对象**或 **\`ref\`**。`,V=`\`\`\`javascript
 ------------------ 首次渲染 ------------------
 组件实例化
    ↓
@@ -1153,4 +1103,4 @@ DOM 更新完成
    └─ nextTick 回调（flush 完全完成后的微任务）
 \`\`\`
 
-`;export{b as _,V as a,y as b,h as c,g as d,_ as e,v as f,m as g,f as h,l as i,d as j,p as k,u as l,c as m,i as n,a as o,s as p,r as q,o as r,t as s,e as t,n as u};
+`;export{V as _,h as a,g as b,_ as c,v as d,m as e,f,l as g,d as h,p as i,u as j,i as k,c as l,a as m,s as n,r as o,o as p,t as q,e as r,n as s};
